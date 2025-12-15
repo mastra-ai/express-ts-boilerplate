@@ -1,29 +1,24 @@
 # AGENTS.md
 
-## Build Commands
-
-- `npm run build` - Compile TypeScript
-- `npm run dev` - Development mode with watch
-- `npm start` - Run production build
-- No lint/test commands configured
+## Commands
+- `npm start` - Run dev server with tsx watch (hot reload)
+- No build/lint/test commands configured
 
 ## Code Style
-
-- ESM project (`"type": "module"`)
+- ESM project (`"type": "module"`) with Express 5.x
+- Double quotes, no semicolons, 2-space indentation
 - Use `type` keyword for type-only imports: `import { type Request } from "express"`
-- Double quotes for strings, no semicolons
-- 2-space indentation
-- `SCREAMING_CASE` for constants, `camelCase` for variables
-- Prefix unused parameters with underscore: `_req`
-- Inline type annotations for function parameters
+- `camelCase` for variables/functions, prefix unused params with underscore: `_req`
+- Interfaces for API response types, Zod for runtime validation schemas
 
 ## TypeScript
+- Strict mode with `noUncheckedIndexedAccess` - always check for undefined on indexed access
+- `verbatimModuleSyntax: true` - use explicit `type` keyword for type imports
+- Use `as Type` assertion for fetch JSON responses
 
-- Strict mode enabled with `noUncheckedIndexedAccess` and `exactOptionalPropertyTypes`
-- Always check for undefined when accessing arrays/objects by index
-- Use explicit `type` keyword for type imports (`verbatimModuleSyntax: true`)
+## Error Handling
+- Throw `new Error()` with descriptive messages for invalid states
+- Check optional chaining results before destructuring: `if (!data.results?.[0]) throw`
 
 ## Project Structure
-
-- Source code in `src/`, compiled output in `dist/`
-- Express 5.x with native ES modules
+- `src/` - Source code, `src/mastra/` - Mastra AI agents, tools, workflows
