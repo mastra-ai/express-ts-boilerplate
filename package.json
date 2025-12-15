@@ -1,0 +1,28 @@
+{
+  "name": "express-ts-boilerplate",
+  "version": "1.0.0",
+  "description": "An Express.js + TypeScript boilerplate",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsc --watch & node --watch dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mastra-ai/express-ts-boilerplate.git"
+  },
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/mastra-ai/express-ts-boilerplate/issues"
+  },
+  "homepage": "https://github.com/mastra-ai/express-ts-boilerplate#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.0.2",
+    "typescript": "^5.9.3"
+  }
+}
